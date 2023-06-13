@@ -12,9 +12,7 @@ struct StartButtonView: View {
     var action: () -> Void
     
     var body: some View {
-        Button(action: {
-            action()
-        }) {
+        Button(action:action) {
             Text(text)
                 .font(.title)
                 .foregroundColor(.white)
@@ -23,5 +21,11 @@ struct StartButtonView: View {
                 .background(Color.blue)
                 .cornerRadius(20)
         }
+    }
+}
+
+struct StartButtonView_Previews: PreviewProvider {
+    static var previews: some View {
+        StartButtonView(text: "START", action: {})
     }
 }
